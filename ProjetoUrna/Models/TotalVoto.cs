@@ -17,11 +17,13 @@ namespace ProjetoUrna.Models
 
         public TotalVoto() { }
 
-        public TotalVoto(int id, DateTime dataVoto, Presidente presidente)
+        public TotalVoto(int id, DateTime dataVoto, Presidente presidente, VotoSituacao situacao, int soma)
         {
             Id = id;
             DataVoto = dataVoto;
             Presidente = presidente;
+            Situacao = situacao;
+            Soma = soma;
         }
     }
 }

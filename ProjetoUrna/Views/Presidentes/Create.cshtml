@@ -1,0 +1,45 @@
+﻿@model ProjetoUrna.Models.ViewModels.PresidenteformViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Novo Presidenciável:</h2>
+
+<h4>Favor digitar corretamente todos os campos abaixo.</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Presidente.NomePresidente" class="control-label"></label>
+                <input asp-for="Presidente.NomePresidente" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Presidente.NomeVice" class="control-label"></label>
+                <input asp-for="Presidente.NomeVice" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Presidente.DataCadastro" class="control-label"></label>
+                <input asp-for="Presidente.DataCadastro" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Presidente.PartidoId" class="control-label"></label>
+                <select asp-for="Presidente.PartidoId" asp-items="@(new SelectList(Model.Partidoes,"Id", "Nome"))" class="form-control">
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

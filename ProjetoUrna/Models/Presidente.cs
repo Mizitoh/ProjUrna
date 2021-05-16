@@ -13,6 +13,7 @@ namespace ProjetoUrna.Models
         public DateTime DataCadastro { get; set; }
 
         public Partido Partido { get; set; }
+        public int PartidoId { get; set; }
         public ICollection<TotalVoto> Votos { get; set; } = new List<TotalVoto>();
 
 

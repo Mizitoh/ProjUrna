@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoUrna.Models.Presidente>
+@{
+    ViewData["Title"] = "Presidentes";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-action="Create" class="btn btn-default">Cadastrar Presidenciável</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+            @Html.DisplayNameFor(model => model.NomePresidente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeVice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Partido)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePresidente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeVice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partido)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>

@@ -11,6 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProjetoUrna.Data;
+using ProjetoUrna.Services;
+using SalesWebMvc.Services;
 
 namespace ProjetoUrna
 {
@@ -39,16 +41,19 @@ namespace ProjetoUrna
             services.AddDbContext<ProjetoUrnaContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("ProjetoUrnaContext"), builder =>
                     builder.MigrationsAssembly("ProjetoUrna")));
-            //services.AddDbContext<ProjetoUrnaContext>(options =>
-            //       options.UseSqlServer(Configuration.GetConnectionString("ProjetoUrnaContext")));
+
+            services.AddScoped<SeedingService>();
+            services.AddScoped<PresidenteService>();
+            services.AddScoped<PartidoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
