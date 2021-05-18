@@ -30,7 +30,7 @@ namespace ProjetoUrna.Controllers
         public IActionResult Create()
         {
             var Partidoes = _partidoService.FindAll();
-            var viewModel = new PresidenteformViewModel { Partidoes = Partidoes};
+            var viewModel = new PresidenteformViewModel { Partidoes = Partidoes };
             return View(viewModel);
         }
 
@@ -39,6 +39,29 @@ namespace ProjetoUrna.Controllers
         public IActionResult Create(Presidente presidente)
         {
             _presidenteService.Insert(presidente);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _presidenteService.FindbyId(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _presidenteService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
     }

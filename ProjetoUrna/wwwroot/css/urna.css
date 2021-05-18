@@ -1,0 +1,118 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #e1e1e1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.cinzaEscuro {
+    top: 50%;
+    margin-top: -200px;
+    width: 250px;
+    height: 60px;
+    right: 20px;
+    position: absolute;
+}
+
+b {
+    position: relative;
+    top: 10px;
+}
+
+.preto {
+    border: solid 2px;
+    top: 50%;
+    margin-top: -135px;
+    position: absolute;
+    background-color: #444;
+    height: 300px;
+    width: 250px;
+    right: 20px;
+}
+
+.cinzaClaro {
+    position: absolute;
+    border: solid 1px;
+    left: 50%;
+    margin-left: -370px;
+    top: 50%;
+    margin-top: -190px;
+    position: absolute;
+    height: 350px;
+    width: 500px;
+    background-color: snow;
+}
+
+.cinzaEscuro {
+    background-color: #b6b5b5;
+}
+
+.bnt {
+    margin: 10px;
+    background-color: black;
+    color: snow;
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+}
+
+.teclado2 {
+    font-size: 11px;
+    position: absolute;
+    bottom: 20px;
+    left: 5px;
+    color: black;
+}
+
+.branco {
+    height: 40px;
+    width: 75px;
+}
+
+.laranja {
+    height: 40px;
+    width: 75px;
+    background-color: #E67401;
+}
+
+.verde {
+    height: 50px;
+    width: 75px;
+    background-color: green;
+}

@@ -1,0 +1,38 @@
+﻿@model ProjetoUrna.Models.Presidente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Tem Certeza de que deseja excluir o candidato?</h2>
+
+<div>
+    <h4>Presidenciável</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePresidente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeVice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Partido.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partido.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div> 
