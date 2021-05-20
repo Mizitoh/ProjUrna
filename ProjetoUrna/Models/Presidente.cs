@@ -9,10 +9,13 @@ namespace ProjetoUrna.Models
     public class Presidente
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Vocês esqueceu de digitar o nome do presidente")]
         [Display(Name = "Presidente")]
         public string NomePresidente { get; set; }
+        [Required(ErrorMessage = "Vocês esqueceu de digitar o nome do Vice")]
         [Display(Name = "Vice")]
         public string NomeVice { get; set; }
+        [Required(ErrorMessage = "Vocês esqueceu de escolher a data")]
         [Display(Name = "Data de Cadastro")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
