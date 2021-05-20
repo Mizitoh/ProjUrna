@@ -1,6 +1,32 @@
-﻿@{
+﻿@model IEnumerable<ProjetoUrna.Models.Presidente>
+@{
     ViewData["Title"] = "Home Page";
 }
+
+<script type="text/javascript">
+
+    function inseum(num) {
+        if (document.teste.textoum.value == "") {
+            document.teste.textoum.value = document.teste.textoum.value + num;
+            document.teste.textodois.value = "";
+        } else if (document.teste.textoum.value != "" && document.teste.textodois.value == "") {
+            document.teste.textodois.value = document.teste.textodois.value + num;
+            document.teste.textoum.value = document.teste.textoum.value;
+        } else if (document.teste.textoum.value != "" && document.teste.textodois.value != "") {
+            document.teste.textodois.value;
+            document.teste.textoum.value;
+        }
+    }
+
+    function votoBranco() {
+
+    }
+
+    function Limpar() {
+        document.teste.textodois.value = "";
+        document.teste.textoum.value = "";
+    }
+</script>
 
 <div>
     <div class="container">
@@ -8,32 +34,40 @@
             <div class="cinzaClaro">
                 <p>Número:</p>
                 <form name="teste" action="" class="form-group">
-                    <input size="1" maxlength="1" type="text" />
-                    <input size="1" maxlength="1" type="text" />
+                    <input size="1" name="textoum" id="1" type="text" />
+                    <input size="1" name="textodois" id="2" maxlength="1" type="text" />
                 </form>
                 <p>Nome:</p>
+                <hr />
             </div>
             <div class="cinzaEscuro">
                 <b>JUSTIÇA<br>ELEITORAL</b>
             </div>
-            <div class="preto">
-                <button class="bnt click">1</button>
-                <button class="bnt click">2</button>
-                <button class="bnt click">3</button>
-                <button class="bnt click">4</button>
-                <button class="bnt click">5</button>
-                <button class="bnt click">6</button>
-                <button class="bnt click">7</button>
-                <button class="bnt click">8</button>
-                <button class="bnt click">9</button>
-                <button class="bnt click">0</button>
+            <div id="divgeral" class="preto">
+                <button class="bnt click" value="1" onclick="inseum('1')">1</button>
+                <button class="bnt click" value="1" onclick="inseum('2')">2</button>
+                <button class="bnt click" value="1" onclick="inseum('3')">3</button>
+                <button class="bnt click" value="1" onclick="inseum('4')">4</button>
+                <button class="bnt click" value="1" onclick="inseum('5')">5</button>
+                <button class="bnt click" value="1" onclick="inseum('6')">6</button>
+                <button class="bnt click" value="1" onclick="inseum('7')">7</button>
+                <button class="bnt click" value="1" onclick="inseum('8')">8</button>
+                <button class="bnt click" value="1" onclick="inseum('9')">9</button>
+                <button class="bnt click" value="1" onclick="inseum('0')">0</button>
                 <div class="teclado2">
-                    <button class="branco  click">BRANCO</button>
-                    <button class="laranja  click">CORRIGE</button>
-                    <button class="verde">CONFIRMA</button>
+                    <button class="branco  click" onclick="votoBranco">BRANCO</button>
+                    <button class="laranja  click" onclick="Limpar()">CORRIGE</button>
+                    <button class="verde" onclick="Grava">CONFIRMA</button>
                 </div>
             </div>
             <link rel="stylesheet" href="~/css/urna.css" />
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+
+

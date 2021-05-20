@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoUrna.Models;
+using ProjetoUrna.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +15,8 @@ namespace ProjetoUrna.Controllers
         {
             return View();
         }
+
+     
 
         public IActionResult About()
         {

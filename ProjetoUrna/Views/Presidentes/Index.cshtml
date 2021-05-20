@@ -22,7 +22,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Partido)
-            </th>
+</th>
             <th>
                 Ações
             </th>
@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.DataCadastro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Partido.Nome)
+                @Html.DisplayFor(modelItem => item.PartidoId)
             </td>
             <td>
                 <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
